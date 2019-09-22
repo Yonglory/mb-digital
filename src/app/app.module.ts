@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarsListComponent } from './cars-list/cars-list.component';
 import localeDe from '@angular/common/locales/de';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FilterCarPipe } from './filter-car.pipe';
 // the second parameter 'de' is optional
 registerLocaleData(localeDe);
@@ -21,9 +20,7 @@ registerLocaleData(localeDe);
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    Ng2SearchPipeModule
-  ],
+    FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
