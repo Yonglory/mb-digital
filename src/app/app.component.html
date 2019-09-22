@@ -1,0 +1,19 @@
+<nav class="navbar navbar-dark bg-black">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="assets/mb-star.svg" alt="mb-star" class="mb-star">
+      <img src="assets/mb-wordmark.svg" class="mb-wordmark" alt="mb-wordmark">
+    </a>
+    <div class="shopping-bag text-right">
+      <img src="assets/shoppingBag.png" alt="shopping-bag" class="">
+      <span class="">{{bagValue.price | currency: bagValue?.currency :'symbol':'1.2-2': bagValue?.locale}}</span>
+    </div>
+  </div>
+</nav>
+<app-cars-list></app-cars-list>
+<router-outlet></router-outlet>
+<footer class="footer">
+  <div class="container">
+    <span class="text-footer">FE Challenge by Yon Glory Kyaw</span>
+  </div>
+</footer>

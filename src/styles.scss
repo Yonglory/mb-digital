@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('../node_modules/bootstrap/dist/css/bootstrap.min.css');
+
+body,
+html {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #333;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 16px;
+  color: #fff;
+}
+
+.bg-black {
+  background: #000;
+}
+
+.navbar {
+  .navbar-brand {
+    width: 40%;
+    position: relative;
+
+    .mb-wordmark {
+      width: 30%;
+      position: absolute;
+      bottom: 15px;
+      left: 30%;
+      // margin-bottom: -46px;
+      // margin-left: 50px;
+    }
+
+    .mb-star {
+      width: 15%;
+    }
+  }
+
+  .shopping-bag {
+    width: 50%;
+    color: #fff;
+    // margin-bottom: -46px;
+    font-size: 18px;
+    margin-top: 28px;
+
+    span {
+      padding: 3px;
+      float: right;
+    }
+
+    img {
+      width: 25px;
+      float: right;
+      // margin-bottom: 15px;
+    }
+  }
+}

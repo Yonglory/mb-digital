@@ -1,0 +1,31 @@
+<div class="container cars-list mt-3" *ngIf="carsList">
+  <div class="row">
+    <div class="card col-md-9">
+      <h1>Cars In Stock</h1>
+    </div>
+    <div class="card col-md-3">
+      <input class="form-control mr-sm-2 search" [(ngModel)]="searchText" type="text" placeholder="Type to Filter..."
+        aria-label="Search">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 card" *ngFor="let car of carsList | filterCar:'name':searchText">
+      <h2 class="card-title">{{car?.modelClass}} {{car?.version}}</h2>
+      <img [src]="car.imagePath" class="card-img-top" [alt]="car.name" />
+      <h3 [class.body-dark]="!car?.price?.show">
+        {{car?.price?.amount | currency: car?.price?.currency :'symbol':'1.2-2': car?.price?.locale}}</h3>
+      <div class="card-body" [class.removed]="!car?.price?.show">
+        <a (click)="addToBag(car?.price)" *ngIf="car?.price?.show">Add to Shopping Bag</a>
+        <a (click)="removeFromBag(car?.price)" *ngIf="!car?.price?.show">Remove from Shopping Bag</a>
+      </div>
+    </div>
+    <div class="nodata" *ngIf="global.nofilterdata">
+      <h3 class="text-center">No cars with that name were found :( </h3>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row loading" *ngIf="!carsList">
+    <img src="assets/spinner.svg" alt="loading" class="spinner-img">
+  </div>
+</div>
